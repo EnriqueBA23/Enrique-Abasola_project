@@ -1,0 +1,48 @@
+PROJECT TITLE: Iskollet: A Scholar Finance Tracker App
+
+PROJECT DESCRIPTION
+*Iskollet* is a mobile application designed to help scholars efficiently manage their stipends and allowances. It serves as a digital finance tracker that allows users to record their income, monitor expenses, and set savings goals. Through this app, scholars can develop better budgeting habits and gain financial discipline, ensuring their allowances are used wisely throughout the month.
+
+---
+PROBLEM STATEMENT
+Many scholars struggle with properly managing their stipends and allowances. Without clear budgeting, they often run out of money before the next allowance, preventing them from reaching simple goals such as buying new shoes or saving for personal needs. There is a need for a system that can track spending, encourage saving, and help scholars manage their finances effectively.
+
+---
+PROJECT OBJECTIVES
+The objectives of this project follow the SMART framework (Specific, Measurable, Achievable, Relevant, and Time-bound):
+
+1. Develop a finance tracking system that specifically records scholars’ allowance, expenses, and savings goals within a three-month development period. (Specific, Achievable, Time-bound)
+2. Design and implement features that allow users to input stipend type (intern/dormer or extern), monthly stipend, and weekly allowance, while providing measurable tracking of daily expenses and savings progress. (Measurable, Specific, Achievable)
+3. Create an engaging, user-friendly interface that visually displays remaining funds and progress toward savings goals, ensuring the app is relevant and useful to scholars’ financial needs. (Relevant, Achievable)
+
+---
+PLANNED FEATURES
+•User registration (Name, intern/extern status)
+•Input monthly stipend and weekly allowance
+•Daily expense logging
+•Automatic calculation of remaining balance
+•Goal-setting system (e.g., save for shoes, gadgets, books)
+•Progress display (visual tracker or percentage bar)
+
+PLANNED INPUTS AND OUTPUTS User Input:
+•Name
+•Intern or Extern
+•Monthly stipend amount
+•Weekly allowance
+•Daily expenses (amount + description)
+•Savings goals System Response:
+•Compute remaining balance
+•Show weekly/monthly breakdown of allowance
+•Display progress toward goals
+•Give reminders or alerts if spending is too high
+
+LOGIC PLAN
+Start
+Display “Welcome to Iskollet’”
+Ask for Name → Ask if Intern or Extern → Ask for Monthly Stipend → Ask for Weekly Allowance
+Display Main Menu: (1) Wallet (2) Savings/Goals (3) Allowance (4) Exit
+If Add Daily Expense → Record expense, update balance
+if Allowance → Show remaining balance + breakdown
+If Savings/Goals → Input goal amount, track progress
+Repeat until user exits
+END
