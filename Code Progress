@@ -1,0 +1,170 @@
+def savings_menu():
+
+    while True:
+        try:
+            savings_balance = float(input("Enter your current savings balance: "))
+            if savings_balance < 0:
+                print("Balance cannot be negative.")
+            else:
+                break
+        except ValueError:
+            print("Invalid amount. Try again.")
+
+  
+    item_name = None
+    item_price = 0
+    item_progress = 0
+
+    while True:
+      
+        print(f"""
+--== SAVINGS MENU ==--
+Current Savings Balance: ₱{savings_balance}
+1. Add to Savings
+2. Withdraw from Savings
+3. Item Savings Goal
+4. Back to Main Menu
+""")
+
+        choice = input("Enter choice (1-4): ")
+
+        if choice not in ["1", "2", "3", "4"]:
+            print("Invalid choice! Please enter a number from the menu.")
+            continue
+
+  
+        if choice == "1":
+            try:
+                amount = float(input("Enter amount to add: "))
+                if amount <= 0:
+                    print("Amount must be positive.")
+                else:
+                    savings_balance += amount
+                    print(f"Added ₱{amount}. New Balance: ₱{savings_balance}")
+            except ValueError:
+                print("Invalid amount!")
+
+  
+        elif choice == "2":
+            try:
+                amount = float(input("Enter amount to withdraw: "))
+                if amount <= 0:
+                    print("Amount must be positive.")
+                elif amount > savings_balance:
+                    print("Insufficient balance!")
+                else:
+                    savings_balance -= amount
+                    print(f"Withdrew ₱{amount}. New Balance: ₱{savings_balance}")
+            except ValueError:
+                print("Invalid amount!")
+
+    
+        elif choice == "3":
+      
+            if item_name is None:
+                item_name = input("Item name: ")
+                while True:
+                    try:
+                        item_price = float(input("Item price: "))
+                        if item_price <= 0:
+                            print("Price must be positive.")
+                        else:
+                            break
+                    except ValueError:
+                        print("Invalid price!")
+
+                item_progress = 0 
+
+            print(f"\nItem: {item_name}")
+            print(f"Price: ₱{item_price}")
+            print(f"Progress: ₱{item_progress}\n")
+
+            action = input("Add or Withdraw for this item (a/w): ").lower()
+
+            try:
+                amount = float(input("Amount: "))
+                if amount <= 0:
+                    print("Amount must be positive.")
+                    continue
+
+                if action == "a":
+                    if amount > savings_balance:
+                        print("Not enough balance to add to this item!")
+                        continue
+                    savings_balance -= amount
+                    item_progress += amount
+                    print(f"Added ₱{amount} to {item_name} savings.")
+                
+                elif action == "w":
+                    if amount > item_progress:
+                        print("Not enough progress in this item to withdraw!")
+                        continue
+                    item_progress -= amount
+                    savings_balance += amount
+                    print(f"Withdrew ₱{amount} from {item_name} savings.")
+
+                else:
+                    print("Invalid choice!")
+                    continue
+
+                status = "Buyable!" if item_progress >= item_price else "Not Buyable yet"
+                print(f"\nItem: {item_name}")
+                print(f"Price: ₱{item_price}")
+                print(f"Progress: ₱{item_progress}")
+                print(f"Status: {status}\n")
+
+            except ValueError:
+                print("Invalid amount!")
+
+        elif choice == "4":
+            return savings_balance
+
+print("--==ISKOLETTE: SMART SPENDING==--")
+print("python program finance manager")
+name = input("Enter name: ")
+dorm = input("Dormer(y/n): ")
+
+print("\n--==ISKOLETTE: SMART SPENDING==--")
+print("python program finance manager")  
+
+if dorm.lower() == 'y':
+    dorm_status = "Dormer"
+elif dorm.lower() == 'n':
+    dorm_status = "Not Dormer"
+else:
+    print("invalid")
+
+print(f"{name}: {dorm_status}")
+print()   
+print("""--==MENU==--
+1. Savings
+2. Stipend tracking
+3. Allowance manager
+4. Spending wallet
+5. Exit
+""")
+
+menuoption = input("Enter Number choice: ")
+if menuoption not in ["1", "2", "3", "4", "5"]:
+    print("Invalid choice! Please enter a number from the menu.")
+elif menuoption == "1":
+    savings_menu()
+
+
+
+print("--==ISKOLETTE: SMART SPENDING==--")
+print("python program finance manager")
+name = input("Enter name: ")
+dorm = input("Dormer(y/n): ")
+
+print("\n--==ISKOLETTE: SMART SPENDING==--")
+print("python program finance manager")  
+
+if dorm.lower() == 'y':
+    dorm_status = "Dormer"
+elif dorm.lower() == 'n':
+    dorm_status = "Not Dormer"
+else:
+    print("invalid")
+
+prin
